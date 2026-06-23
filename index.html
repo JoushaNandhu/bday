@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Jerslin Silviya ✨</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body>
+    <!-- Looping YouTube ambient cinematic background -->
+    <div class="video-background">
+        <iframe src="https://www.youtube.com/embed/3F2HHrUB6aI?autoplay=1&mute=1&loop=1&playlist=3F2HHrUB6aI&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&enablejsapi=1" 
+                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+
+    <!-- Liquid Morphing Backdrop Blobs -->
+    <div class="liquid-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <!-- Canvas for cinematic starfield & floaters -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Canvas for confetti explosions -->
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- Floating Top Bar Controls (API Settings completely removed) -->
+    <div class="top-controls">
+        <div class="control-btn-item" id="audio-toggle">
+            <i class="fa-solid fa-volume-high"></i>
+            <span>Sound On</span>
+        </div>
+    </div>
+
+    <!-- 1. SPLASH SCREEN (Autoplay workaround & Entry) -->
+    <div class="splash-screen" id="splash-screen">
+        <div class="splash-content">
+            <h2 class="splash-subtitle">A Blessed Celebration awaits...</h2>
+            <h1 class="splash-title">Jerslin Silviya</h1>
+            <div class="splash-ring-container">
+                <div class="glow-ring"></div>
+                <button class="enter-btn" id="enter-btn">
+                    <span class="btn-glow-effect"></span>
+                    <span class="btn-text">Unlock Birthday Magic ✨</span>
+                </button>
+            </div>
+            <p class="splash-hint">🔊 Turn on your sound for a cinematic experience</p>
+        </div>
+    </div>
+
+    <!-- MAIN APP CONTENT (Hidden initially) -->
+    <div class="app-container hidden" id="app-container">
+        
+        <!-- HEADER SECTION -->
+        <header class="cinematic-header">
+            <p class="header-pretitle">Celebrating Grace & Life</p>
+            <h1 class="header-title animate-shine">Happy Birthday, Jerslin!</h1>
+            <div class="birthday-banner-subtitle">
+                <span>June 24, 2026</span>
+                <span class="bullet">•</span>
+                <span>Celebrating 19 Blessed Years</span>
+            </div>
+        </header>
+
+        <!-- MAIN CINEMATIC JOURNEY -->
+        <main class="journey-container">
+            
+            <!-- CHAPTER 1: DIVINE SCRIPTURES -->
+            <section class="journey-chapter reveal-on-scroll" id="chapter-scriptures">
+                <div class="chapter-badge">Chapter I</div>
+                <h2 class="chapter-headline">Divine Scriptures</h2>
+                <div class="glass-card chapter-card liquid-card">
+                    <div class="card-glow"></div>
+                    <div class="verse-carousel" id="verse-carousel">
+                        <!-- Verse 1 (Jeremiah 29:11) - Compass SVG -->
+                        <div class="carousel-item active">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <circle cx="50" cy="50" r="40" fill="none" stroke="url(#gold-grad)" stroke-width="2"/>
+                                    <path d="M 50 20 L 58 42 L 80 50 L 58 58 L 50 80 L 42 58 L 20 50 L 42 42 Z" fill="url(#rose-grad)"/>
+                                    <circle cx="50" cy="50" r="4" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Jeremiah 29:11</p>
+                            </div>
+                            <p class="verse-interpretation">May God guide your beautiful steps this year, leading you into a future filled with His boundless peace and love.</p>
+                        </div>
+
+                        <!-- Verse 2 (Psalm 139:14) - Dove SVG -->
+                        <div class="carousel-item">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <path d="M 30 50 C 35 40, 50 35, 70 38 C 65 48, 55 52, 45 52 C 40 58, 38 65, 32 72 C 34 62, 32 55, 30 50 Z" fill="url(#gold-grad)"/>
+                                    <path d="M 45 52 C 55 45, 68 45, 78 40 C 72 50, 62 58, 48 58 Z" fill="url(#rose-grad)" opacity="0.85"/>
+                                    <circle cx="72" cy="42" r="1.5" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">I praise you, for I am fearfully and wonderfully made. Wonderful are your works; my soul knows it very well.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Psalm 139:14</p>
+                            </div>
+                            <p class="verse-interpretation">Never forget how unique and precious you are in God's eyes. You are a masterpiece designed for an amazing purpose.</p>
+                        </div>
+
+                        <!-- Verse 3 (Psalm 20:4) - Anchor SVG -->
+                        <div class="carousel-item">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <rect x="48" y="20" width="4" height="50" rx="2" fill="url(#gold-grad)"/>
+                                    <rect x="35" y="32" width="30" height="4" rx="2" fill="url(#gold-grad)"/>
+                                    <circle cx="50" cy="18" r="6" fill="none" stroke="url(#gold-grad)" stroke-width="3"/>
+                                    <path d="M 25 55 C 25 75, 75 75, 75 55" fill="none" stroke="url(#rose-grad)" stroke-width="4" stroke-linecap="round"/>
+                                    <path d="M 21 53 L 29 53 L 25 60 Z" fill="url(#rose-grad)"/>
+                                    <path d="M 71 53 L 79 53 L 75 60 Z" fill="url(#rose-grad)"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">May he grant you your heart's desire and fulfill all your plans.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Psalm 20:4</p>
+                            </div>
+                            <p class="verse-interpretation">As you step into 19, may all the dreams planted in your heart begin to bloom and flourish by His grace.</p>
+                        </div>
+
+                        <!-- Verse 4 (Numbers 6:24-26) - Glowing Cross SVG -->
+                        <div class="carousel-item">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <rect x="47" y="15" width="6" height="65" rx="3" fill="url(#gold-grad)"/>
+                                    <rect x="25" y="32" width="50" height="6" rx="3" fill="url(#gold-grad)"/>
+                                    <circle cx="50" cy="35" r="22" fill="none" stroke="url(#rose-grad)" stroke-width="2" stroke-dasharray="4 2" opacity="0.7"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">The Lord bless you and keep you; the Lord make his face shine upon you and be gracious to you; the Lord lift up his countenance upon you and give you peace.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Numbers 6:24-26</p>
+                            </div>
+                            <p class="verse-interpretation">Sending you the warmest prayers for safety, joy, and the gentle warmth of His presence in your life today and always.</p>
+                        </div>
+
+                        <!-- Verse 5 (Proverbs 3:5-6) - Lantern SVG -->
+                        <div class="carousel-item">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <path d="M 40 30 L 60 30 L 65 37 L 35 37 Z" fill="url(#gold-grad)"/>
+                                    <path d="M 35 37 L 65 37 L 60 70 L 40 70 Z" fill="none" stroke="url(#gold-grad)" stroke-width="3"/>
+                                    <path d="M 38 70 L 62 70 L 58 78 L 42 78 Z" fill="url(#gold-grad)"/>
+                                    <path d="M 50 18 C 50 18, 52 24, 48 30 C 48 30, 44 26, 50 18 Z" fill="url(#rose-grad)"/>
+                                    <circle cx="50" cy="52" r="10" fill="url(#rose-grad)" opacity="0.6" class="pulse"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">Trust in the Lord with all your heart, and do not lean on your own understanding. In all your ways acknowledge him, and he will make straight your paths.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Proverbs 3:5-6</p>
+                            </div>
+                            <p class="verse-interpretation">Let go of worry and allow His wisdom to guide you. He is already straightening the road ahead of you.</p>
+                        </div>
+
+                        <!-- Verse 6 (Psalm 121:1-2) - Mountains/Shield SVG -->
+                        <div class="carousel-item">
+                            <div class="verse-graphic">
+                                <svg class="inline-graphic" viewBox="0 0 100 100">
+                                    <path d="M 15 75 L 38 40 L 58 65 L 75 35 L 90 75 Z" fill="none" stroke="url(#gold-grad)" stroke-width="3" stroke-linejoin="round"/>
+                                    <path d="M 38 40 L 45 50 L 50 45 L 58 65 L 63 55 L 75 35 L 80 47 Z" fill="url(#rose-grad)" opacity="0.6"/>
+                                    <circle cx="78" cy="20" r="4" fill="#ffffff"/>
+                                </svg>
+                            </div>
+                            <div class="scripture-container">
+                                <span class="quote-mark">“</span>
+                                <p class="scripture-text">I lift up my eyes to the hills. From where does my help come? My help comes from the Lord, who made heaven and earth.</p>
+                                <span class="quote-mark text-right">”</span>
+                                <p class="scripture-reference">Psalm 121:1-2</p>
+                            </div>
+                            <p class="verse-interpretation">Look upward in moments of need. The Creator of the entire cosmos is your personal guardian and strength.</p>
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="carousel-controls">
+                        <button class="carousel-btn prev-btn" id="prev-verse">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-dots" id="carousel-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <button class="carousel-btn next-btn" id="next-verse">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CINEMATIC DIVIDER 1 -->
+            <div class="cinematic-divider reveal-on-scroll">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fa-solid fa-cross"></i></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- CHAPTER 2: DAILY BREAD -->
+            <section class="journey-chapter reveal-on-scroll" id="chapter-bread">
+                <div class="chapter-badge">Chapter II</div>
+                <h2 class="chapter-headline">Daily Bread Promise</h2>
+                <div class="glass-card chapter-card liquid-card">
+                    <div class="card-glow"></div>
+                    <div class="bread-container">
+                        <div class="ai-intro-box">
+                            <h3>Draw Your Daily Bread Promise 🍞</h3>
+                            <p>As you step into 19, pull a bread slice of covenant promise! Tap the basket below to generate a fresh, encouraging scripture and blessing for your day.</p>
+                        </div>
+
+                        <div class="bread-basket-wrapper" id="bread-basket">
+                            <div class="basket-glow"></div>
+                            <div class="basket-liquid-blob"></div>
+                            <i class="fa-solid fa-basket-shopping basket-icon pulse"></i>
+                            <span class="tap-text">Tap to Draw</span>
+                        </div>
+
+                        <!-- Drawn Bread Card Display -->
+                        <div class="bread-card-display hidden" id="bread-card-display">
+                            <div class="drawn-card-inner">
+                                <div class="drawn-card-header">
+                                    <i class="fa-solid fa-cross cross-gold"></i>
+                                    <span>Heavenly Manna</span>
+                                </div>
+                                <p class="drawn-verse-text" id="drawn-verse-text">"The Lord bless you and keep you..."</p>
+                                <p class="drawn-verse-ref" id="drawn-verse-ref">— Numbers 6:24</p>
+                                <p class="drawn-verse-blessing" id="drawn-verse-blessing">May God's favor be a shield around you today.</p>
+                                <button class="modal-close-btn bread-draw-again" id="bread-draw-again">Draw Again 🔄</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CINEMATIC DIVIDER 2 -->
+            <div class="cinematic-divider reveal-on-scroll">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fa-solid fa-dove"></i></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- CHAPTER 3: AI BLESSING SANCTUARY -->
+            <section class="journey-chapter reveal-on-scroll" id="chapter-ai">
+                <div class="chapter-badge">Chapter III</div>
+                <h2 class="chapter-headline">Holy Spirit Whispers</h2>
+                <div class="glass-card chapter-card liquid-card">
+                    <div class="card-glow"></div>
+                    <div class="ai-intro-box">
+                        <h3>Ask the Holy Spirit for Guidance 🕊️</h3>
+                        <p>Write down what your soul is searching for today (e.g. <em>Peace, Courage, Joy, Guidance, Patience</em>), and our AI will retrieve a personalized birthday blessing, Scripture verse, and an encouraging Bible story just for you.</p>
+                    </div>
+
+                    <div class="ai-input-zone">
+                        <div class="ai-input-wrapper">
+                            <i class="fa-solid fa-feather-pointed input-feather"></i>
+                            <input type="text" id="ai-mood-input" placeholder="What is Jerslin seeking today? (e.g., Peace, Joy)">
+                        </div>
+                        <button class="generate-ai-btn" id="generate-ai-btn">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Generate</span>
+                        </button>
+                    </div>
+
+                    <!-- AI Response Display Window -->
+                    <div class="ai-response-box hidden" id="ai-response-box">
+                        <div class="ai-response-glow"></div>
+                        <div class="ai-response-header">
+                            <i class="fa-solid fa-scroll icon-gold"></i>
+                            <span>Your Personal Blessing</span>
+                            <span class="ai-badge">Gemini AI</span>
+                        </div>
+                        <div class="ai-response-scrollable" id="ai-response-content">
+                            <p class="ai-placeholder-text">Enter your mood above and generate a blessing...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CINEMATIC DIVIDER 3 -->
+            <div class="cinematic-divider reveal-on-scroll">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fa-solid fa-cake-candles"></i></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- CHAPTER 4: THE BIRTHDAY ALTAR -->
+            <section class="journey-chapter reveal-on-scroll" id="chapter-cake">
+                <div class="chapter-badge">Chapter IV</div>
+                <h2 class="chapter-headline">The Birthday Altar</h2>
+                <div class="glass-card chapter-card liquid-card">
+                    <div class="card-glow"></div>
+                    <div class="cake-container">
+                        <!-- Blow instructions -->
+                        <p class="cake-instruction" id="cake-instruction">🕯️ Tap the glowing candle flame to blow it out!</p>
+                        
+                        <!-- Cake SVG -->
+                        <div class="cake-wrapper" id="cake-wrapper">
+                            <div class="sparkles-container" id="sparkles-container"></div>
+                            <svg class="birthday-cake" viewBox="0 0 200 240">
+                                <!-- Cake Stand -->
+                                <path d="M 40 210 L 160 210 L 150 230 L 50 230 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.25)" stroke-width="1.5"/>
+                                <rect x="92" y="210" width="16" height="20" fill="rgba(255,255,255,0.12)" />
+                                
+                                <!-- Bottom Layer -->
+                                <rect x="50" y="150" width="100" height="60" rx="8" ry="8" fill="url(#layer1-grad)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <path d="M 50 165 C 60 175, 75 160, 90 170 C 105 180, 115 160, 130 172 C 140 180, 145 165, 150 175 L 150 150 L 50 150 Z" fill="rgba(255, 182, 193, 0.4)"/>
+                                
+                                <!-- Top Layer -->
+                                <rect x="65" y="100" width="70" height="50" rx="6" ry="6" fill="url(#layer2-grad)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+                                <path d="M 65 112 C 72 120, 82 110, 92 118 C 102 125, 112 110, 122 120 C 130 125, 133 115, 135 120 L 135 100 L 65 100 Z" fill="rgba(255, 228, 225, 0.4)"/>
+                                
+                                <!-- Candle Stand & Candle -->
+                                <rect x="96" y="70" width="8" height="30" fill="url(#candle-grad)" rx="2"/>
+                                
+                                <!-- Candle Flame -->
+                                <g class="candle-flame" id="candle-flame">
+                                    <!-- Inner Core -->
+                                    <path class="flame-inner" d="M 100 50 C 97 58, 98 68, 100 70 C 102 68, 103 58, 100 50 Z" fill="#ffd700"/>
+                                    <!-- Outer Aura -->
+                                    <path class="flame-outer" d="M 100 42 C 94 54, 96 68, 100 71 C 104 68, 106 54, 100 42 Z" fill="#ff4500" opacity="0.8"/>
+                                    <!-- Light Glow Ring -->
+                                    <circle cx="100" cy="58" r="15" fill="rgba(255, 165, 0, 0.2)" class="flame-glow-ring"/>
+                                </g>
+                                
+                                <!-- Gradients Definition (inserted dynamic ones here too) -->
+                                <defs>
+                                    <linearGradient id="layer1-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#052042" />
+                                        <stop offset="50%" stop-color="#0b3b75" />
+                                        <stop offset="100%" stop-color="#145da0" />
+                                    </linearGradient>
+                                    <linearGradient id="layer2-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#00a896" />
+                                        <stop offset="100%" stop-color="#ffd700" />
+                                    </linearGradient>
+                                    <linearGradient id="candle-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#b8c7dd" />
+                                        <stop offset="30%" stop-color="#ffffff" />
+                                        <stop offset="70%" stop-color="#ffffff" />
+                                        <stop offset="100%" stop-color="#b8c7dd" />
+                                    </linearGradient>
+                                    <linearGradient id="gold-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ffd700" />
+                                        <stop offset="100%" stop-color="#ffe875" />
+                                    </linearGradient>
+                                    <linearGradient id="rose-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ff477e" />
+                                        <stop offset="100%" stop-color="#ff7a00" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Personal Letter Card (Revealed after candle is blown out) -->
+                    <div class="personal-letter-container hidden" id="personal-letter">
+                        <div class="letter-inner">
+                            <h3>A Special Message for You 💌</h3>
+                            <p class="letter-body">
+                                Dear <strong>Jerslin Silviya</strong>,<br><br>
+                                Happy 19th Birthday! On this beautiful day, I pray that God blesses you abundantly with His peace, guidance, and unwavering grace. May you walk through this new chapter with confidence, knowing that He has amazing things in store for you. 
+                                <br><br>
+                                You are incredibly loved, valued, and cherished. Have a truly wonderful and blessed year ahead! ✨
+                            </p>
+                            <div class="signature">With love and blessings ❤️</div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Buttons Box -->
+                    <div class="interaction-zone">
+                        <p class="button-header-text">Choose your birthday action below:</p>
+                        <div class="button-container" id="evasive-container">
+                            <button class="action-btn accept-btn" id="accept-btn">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>Accept Blessings!</span>
+                            </button>
+                            <button class="action-btn evasive-btn" id="evasive-btn">
+                                <i class="fa-solid fa-circle-xmark"></i>
+                                <span>Don't Click Me!</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CINEMATIC DIVIDER 4 -->
+            <div class="cinematic-divider reveal-on-scroll">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="divider-line"></div>
+            </div>
+
+            <!-- CHAPTER 5: THE WISDOM TRIALS -->
+            <section class="journey-chapter reveal-on-scroll" id="chapter-games">
+                <div class="chapter-badge">Chapter V</div>
+                <h2 class="chapter-headline">The Wisdom Trials</h2>
+                
+                <div class="games-grid">
+                    <!-- GAME CARD 1: QUIZ -->
+                    <div class="glass-card game-inner-card liquid-card">
+                        <div class="card-glow"></div>
+                        <h3 class="game-headline-title"><i class="fa-solid fa-circle-question"></i> Scripture Trivia</h3>
+                        
+                        <div class="quiz-game-box" id="quiz-game-box">
+                            <div class="game-meta-row">
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-award text-gold"></i>
+                                    <span id="quiz-score-val">Score: 0/5</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span id="quiz-progress-val">Question: 1/5</span>
+                                </div>
+                            </div>
+                            <div class="quiz-progress-bar-container">
+                                <div class="quiz-progress-bar" id="quiz-progress-bar" style="width: 20%;"></div>
+                            </div>
+
+                            <div class="quiz-question-container">
+                                <h3 class="quiz-question" id="quiz-question-text">Who defeated the giant Goliath with a single stone and slingshot?</h3>
+                                <div class="quiz-choices-grid" id="quiz-choices-grid">
+                                    <!-- Choices loaded dynamically -->
+                                </div>
+                            </div>
+                            
+                            <div class="quiz-feedback-row hidden" id="quiz-feedback-row">
+                                <p class="quiz-feedback-text" id="quiz-feedback-text">Correct! David was chosen by God to be King.</p>
+                                <button class="quiz-next-btn" id="quiz-next-btn">Next Question <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Quiz Score Certificate Panel (Hidden initially) -->
+                        <div class="quiz-result-panel hidden" id="quiz-result-panel">
+                            <div class="certificate-glow"></div>
+                            <i class="fa-solid fa-ribbon medal-icon"></i>
+                            <h2>Trivia Complete! 📜</h2>
+                            <h3 id="quiz-rank-title">Rank: Scripture Scholar</h3>
+                            <p class="quiz-result-text" id="quiz-result-text">Congratulations, Jerslin! You scored 5 out of 5! Your knowledge of God's Word is wonderful.</p>
+                            <button class="modal-close-btn" id="quiz-retry-btn">Try Again 🔄</button>
+                        </div>
+                    </div>
+
+                    <!-- GAME CARD 2: EMOJIS -->
+                    <div class="glass-card game-inner-card liquid-card">
+                        <div class="card-glow"></div>
+                        <h3 class="game-headline-title"><i class="fa-solid fa-puzzle-piece"></i> Emoji Guessing</h3>
+                        
+                        <div class="emoji-game-box" id="emoji-game-box">
+                            <div class="game-meta-row">
+                                <div class="meta-item">
+                                    <i class="fa-solid fa-gamepad icon-gold"></i>
+                                    <span>Guess the Story</span>
+                                </div>
+                                <div class="meta-item">
+                                    <span id="emoji-progress-val">Level: 1/4</span>
+                                </div>
+                            </div>
+                            
+                            <div class="emoji-display-box" id="emoji-display-box">
+                                🦁🍖🔥
+                            </div>
+                            <p class="emoji-riddle-clue" id="emoji-riddle-clue">He was thrown into a pit of wild beasts for praying to God, but God shut the lions' mouths.</p>
+                            
+                            <div class="emoji-choices-grid" id="emoji-choices-grid">
+                                <!-- choices loaded dynamically -->
+                            </div>
+
+                            <div class="emoji-feedback-row hidden" id="emoji-feedback-row">
+                                <div class="emoji-success-card">
+                                    <h4>Correct Answer! 🎉</h4>
+                                    <p class="emoji-story-summary" id="emoji-story-summary">Daniel's faithfulness to God saved him. The King declared that all people must worship Daniel's God.</p>
+                                </div>
+                                <button class="quiz-next-btn" id="emoji-next-btn">Next Level <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Emoji game completed screen -->
+                        <div class="emoji-result-panel hidden" id="emoji-result-panel">
+                            <div class="certificate-glow"></div>
+                            <i class="fa-solid fa-circle-check medal-icon"></i>
+                            <h2>You Solved All Riddles! 🧩</h2>
+                            <p class="quiz-result-text">Amazing job! You identified all the Bible stories successfully. May these stories of faithfulness inspire your own walk of faith every single day.</p>
+                            <button class="modal-close-btn" id="emoji-retry-btn">Play Again 🔄</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <!-- FOOTER -->
+        <footer class="cinematic-footer">
+            <p>Made with love for Jerslin Silviya • Keep Shining brightly like the stars</p>
+        </footer>
+    </div>
+
+    <!-- MODAL FOR OKAY / ACCCEPT BUTTON -->
+    <div class="modal-overlay hidden" id="accept-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fa-solid fa-gift pulse"></i>
+            </div>
+            <h2>Wishes Confirmed! 🎉</h2>
+            <p class="modal-verse">"The Lord bless you and keep you; the Lord make his face shine upon you..."</p>
+            <p class="modal-text">All heavenly blessings, peace, and pure joy have been sent straight to you, Jerslin! May your 19th year be your most magical and spiritual journey yet. Go celebrate with some delicious cake!</p>
+            <button class="modal-close-btn" id="close-accept-modal">Ameen! 🙏</button>
+        </div>
+    </div>
+
+    <!-- MODAL FOR FORBIDDEN / EVASIVE BUTTON CLICK -->
+    <div class="modal-overlay hidden" id="forbidden-modal">
+        <div class="modal-content forbidden-content">
+            <div class="modal-icon warning-icon">
+                <i class="fa-solid fa-face-grimace shake"></i>
+            </div>
+            <h2>Aha! Caught You! 😜</h2>
+            <p class="modal-warning-sub">I explicitly said <em>NOT</em> to click this button!</p>
+            <div class="forbidden-joke-card">
+                <p>"Oh, so you're a rebel? I like that! But you still can't bypass the birthday rules!"</p>
+                <div class="rebel-verse">
+                    <p class="rebel-verse-text">"The Lord will fight for you; you need only to be still."</p>
+                    <p class="rebel-verse-ref">— Exodus 14:14</p>
+                </div>
+            </div>
+            <p class="modal-text">Since you clicked the secret button, you unlocked a double portion of grace and extra sweet cake slices today. Now go back and press the actual blessing button!</p>
+            <button class="modal-close-btn forbidden-close" id="close-forbidden-modal">Back to Safety 🕊️</button>
+        </div>
+    </div>
+
+    <script src="script.js?v=6"></script>
+</body>
+</html>

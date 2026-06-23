@@ -1,0 +1,7 @@
+# Local development ignore
+.git/
+node_modules/
+.DS_Store
+*.log
+.agents/
+.system_generated/
