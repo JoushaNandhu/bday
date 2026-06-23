@@ -4,6 +4,15 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Performance detection for mobile devices
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
+    if (isMobile) {
+        const iframe = document.getElementById('bg-video-iframe');
+        if (iframe) iframe.remove();
+        const bgContainer = document.getElementById('video-background-container');
+        if (bgContainer) bgContainer.remove();
+    }
+
     // DOM Elements - General
     const splashScreen = document.getElementById('splash-screen');
     const enterBtn = document.getElementById('enter-btn');
@@ -97,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. STARFIELD CANVAS ANIMATION
     // ==========================================
     let stars = [];
-    const numStars = 55;
+    const numStars = isMobile ? 22 : 55;
 
     function resizeStarfield() {
         starfieldCanvas.width = window.innerWidth;
@@ -139,8 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             starfieldCtx.fillStyle = this.color;
             starfieldCtx.beginPath();
             starfieldCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            starfieldCtx.shadowBlur = this.size * 3;
-            starfieldCtx.shadowColor = this.color;
+            // Removed shadowBlur to prevent massive CPU canvas lag on mobile devices
             starfieldCtx.fill();
             starfieldCtx.restore();
         }

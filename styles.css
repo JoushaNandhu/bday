@@ -1784,7 +1784,7 @@ body {
     to { background-position: 200% center; }
 }
 
-/* RESPONSIVE DESIGN - MEDIA QUERIES */
+/* RESPONSIVE DESIGN & PERFORMANCE TUNING - MEDIA QUERIES */
 @media (max-width: 950px) {
     .games-grid {
         grid-template-columns: 1fr;
@@ -1805,6 +1805,38 @@ body {
     
     .chapter-headline {
         font-size: 1.8rem;
+    }
+}
+
+/* Specific Mobile Optimization (Screens < 768px) */
+@media (max-width: 768px) {
+    /* Disable resource-heavy YouTube iframe background */
+    .video-background {
+        display: none !important;
+    }
+    
+    /* Disable costly CSS SVG blur blobs to eliminate scroll lag */
+    .blob {
+        display: none !important;
+    }
+    
+    /* Optimize frosted glass effect: decrease blur and increase opacity for low-power mobile GPUs */
+    .glass-card {
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        background: rgba(3, 16, 35, 0.85) !important;
+        transform: translate3d(0,0,0); /* Force GPU layer */
+        backface-visibility: hidden;
+    }
+    
+    .reveal-on-scroll {
+        /* Faster translate transition for snappier mobile feel */
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out !important;
+        transform: translate3d(0, 25px, 0) scale(0.99) !important;
+    }
+    
+    .reveal-active {
+        transform: translate3d(0, 0, 0) scale(1) !important;
     }
 }
 
